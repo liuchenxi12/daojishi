@@ -1,0 +1,44 @@
+ <head>
+     <link href="css/style.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div> 
+   <h1><font color="ff0000"></font>
+    <div class="text" style=" text-align:center;">
+     <font color="ff0000">期中考试倒计时</font>
+    </div></h1> 
+   <h3 id="title-1">
+    <div class="text" style=" text-align:center;">
+     期中考试（六年级数学）时间：2023年4月20日 星期四 1300
+    </div></h3> 
+   <h3 id="title-2">
+    <div class="text" style=" text-align:center;">距离期中考试（六年级数学）还有
+    </div></h3> 
+   <div>
+    <div class="text" style=" text-align:center;"> 
+     <span id="t_d">00</span> 
+     <span id="t_h">00</span> 
+     <span id="t_m">00</span> 
+     <span id="t_s">00</span> 
+    </div> 
+    <script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2023/04/20 08:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+var d=Math.floor(t/1000/60/60/24);
+var h=Math.floor(t/1000/60/60%24);
+var m=Math.floor(t/1000/60%60);
+var s=Math.floor(t/1000%60);document.getElementById("t_d").innerHTML = d + " 天";
+document.getElementById("t_h").innerHTML = h + " 时";
+document.getElementById("t_m").innerHTML = m + " 分";
+document.getElementById("t_s").innerHTML = s + " 秒";
+}
+setInterval(getRTime,1000);
+</script>
+   </div>
+  </div>
+<button class="btn"onclick="window.location.href='index.html'" type="button" id="add"><span>查看语文剩余时间</span></button>
+<button class="btn"onclick="window.location.href='en.html'" type="button" id="add"><span>查看英语剩余时间</span></button>
+ </body>
+</html>
